@@ -98,3 +98,34 @@ The application strictly follows the **MVVM (Model-View-ViewModel)** pattern to 
 - **Colors**: Defined in `Colors.xaml` (Primary Purple: `#512BD4`).
 - **Styles**: Global styles for Buttons, Labels, and Borders in `Styles.xaml`.
 - **Icons**: Uses Font/Glyph icons and FontImageSources.
+
+---
+
+## 💻 Using this Project from GitHub
+
+If you are viewing this project on GitHub and want to run it locally, follow these steps:
+
+1. **Clone the Repository**:
+   ```powershell
+   git clone <YOUR_GITHUB_REPO_URL>
+   cd ShopApp
+   ```
+
+2. **Restore Dependencies**:
+   Open a terminal in the project folder and run:
+   ```powershell
+   dotnet restore
+   ```
+
+3. **Build the Project**:
+   ```powershell
+   dotnet build
+   ```
+
+4. **Run the Application**:
+   Select your target platform and run:
+   - **Windows**: `dotnet run -f net10.0-windows10.0.19041.0`
+   - **Android**: `dotnet run -f net10.0-android`
+   - **iOS/Mac**: `dotnet run -f net10.0-maccatalyst` (Requires Mac)
+
+> **Note**: Ensure you have the [.NET Multi-platform App UI development](https://dotnet.microsoft.com/en-us/apps/maui) workload installed in Visual Studio.
