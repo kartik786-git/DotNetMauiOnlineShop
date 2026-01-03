@@ -1,0 +1,100 @@
+# ShopApp - .NET MAUI E-Commerce Application
+
+A modern, cross-platform online shopping application built with **.NET 10 MAUI** and the **CommunityToolkit.Mvvm**.
+
+## 🚀 Features
+
+- **Modern Home Page**: Two-column product grid with hero headers, pill-shaped category filters, and search functionality.
+- **Rich Product Details**: Dynamic high-quality images, sticky "Add to Cart" footer, and quantity controls.
+- **Smart Cart Management**: Card-based cart items, real-time total calculation, and streamlined checkout simulation.
+- **Order Tracking**: Visual order history with color-coded status badges (Pending, Delivered, Cancelled) and timeline elements.
+- **Robust Architecture**: Built on MVVM standards with Dependency Injection and resilient API handling (including `JsonSerializerOptions` for case-insensitivity).
+- **Cross-Platform**: Single codebase running seamlessly on Windows, Android, iOS, and macOS.
+
+---
+
+## 🏗️ Architecture & Structure
+
+The application strictly follows the **MVVM (Model-View-ViewModel)** pattern to ensure separation of concerns and testability.
+
+### 📂 Project Structure
+
+- **Models** (`/Models`)
+  - `Product`: Data model for store items.
+  - `Order`: Represents a customer order with `Items` and `Status`.
+  - `CartItem`: Represents items added to the cart w/ Quantity.
+  - `Category`: Product categorization.
+
+- **ViewModels** (`/ViewModels`)
+  - Inherit from `BaseViewModel` (handles `IsBusy`, `Title`).
+  - `HomeViewModel`: Fetches categories and products. Handles navigation.
+  - `ProductDetailsViewModel`: Manages product selection and "Add to Cart" logic.
+  - `CartViewModel`: Loads cart items and handles checkout logic.
+  - `OrdersViewModel`: Fetches order history and logs on-screen debug info (if enabled).
+  - Uses `[ObservableProperty]` and `[RelayCommand]` for boilerplate reduction.
+
+- **Views** (`/Views`)
+  - `HomePage`: Main landing with `CollectionView` grid.
+  - `ProductDetailsPage`: Detailed view with hero image parallax concepts.
+  - `CartPage`: Cart summary and checkout.
+  - `OrdersPage`: List of orders with custom XAML triggers for status colors.
+
+- **Services** (`/Services`)
+  - `ApiService`: Centralized HTTP client.
+    - Handles endpoints: `/api/products`, `/api/cart`, `/api/orders`.
+    - **Smart Image Assessment**: Automatically assigns Unsplash images based on product keywords (e.g., "iPhone" -> Phone Image) to prevent empty placeholders.
+
+---
+
+## 🔄 End-to-End User Flow
+
+1. **Discovery**
+   - User launches app to **HomePage**.
+   - Browses "Popular Products" or selects a "Category" chip.
+   - User taps a product card.
+
+2. **Selection**
+   - User lands on **ProductDetailsPage**.
+   - Views large hero image and description.
+   - Adjusts quantity using `(+)` and `(-)` buttons.
+   - Clicks **"Add to Cart"** -> Item is posted to the backend session.
+
+3. **Checkout**
+   - User navigates to **Cart** tab.
+   - Reviews items and total price.
+   - Clicks **"Checkout"**. App simulates payment and creates an order via API.
+
+4. **Tracking**
+   - User switches to **Orders** tab.
+   - The new order appears in the list.
+   - Status badge (e.g., "Pending", "Delivered") reflects the current backend state.
+
+---
+
+## 🛠️ Setup & Running
+
+**Prerequisites**:
+- .NET 10 SDK
+- Visual Studio 2022 (17.8+) or VS Code with MAUI extension.
+
+**How to Run**:
+
+1. **Clone & Restore**:
+   ```powershell
+   dotnet restore
+   ```
+
+2. **Run on Windows**:
+   ```powershell
+   dotnet run -f net10.0-windows10.0.19041.0
+   ```
+
+3. **Run on Android** (requires emulator/device):
+   ```powershell
+   dotnet run -f net10.0-android
+   ```
+
+## 🎨 UI Resources
+- **Colors**: Defined in `Colors.xaml` (Primary Purple: `#512BD4`).
+- **Styles**: Global styles for Buttons, Labels, and Borders in `Styles.xaml`.
+- **Icons**: Uses Font/Glyph icons and FontImageSources.
