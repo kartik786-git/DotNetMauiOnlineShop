@@ -1,0 +1,158 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>ShopApp</name>
+    </assembly>
+    <members>
+        <member name="T:ShopApp.Models.CartItem">
+            <inheritdoc/>
+        </member>
+        <member name="P:ShopApp.Models.CartItem.Quantity">
+            <inheritdoc cref="F:ShopApp.Models.CartItem._quantity"/>
+        </member>
+        <member name="T:ShopApp.ViewModels.BaseViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="P:ShopApp.ViewModels.BaseViewModel.IsBusy">
+            <inheritdoc cref="F:ShopApp.ViewModels.BaseViewModel.isBusy"/>
+        </member>
+        <member name="P:ShopApp.ViewModels.BaseViewModel.Title">
+            <inheritdoc cref="F:ShopApp.ViewModels.BaseViewModel.title"/>
+        </member>
+        <member name="T:ShopApp.ViewModels.CartViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ShopApp.ViewModels.CartViewModel.TotalAmount">
+            <inheritdoc cref="F:ShopApp.ViewModels.CartViewModel.totalAmount"/>
+        </member>
+        <member name="F:ShopApp.ViewModels.CartViewModel.loadCartCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.CartViewModel.LoadCartCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.CartViewModel.LoadCartCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.CartViewModel.LoadCartAsync"/>.</summary>
+        </member>
+        <member name="F:ShopApp.ViewModels.CartViewModel.checkoutCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.CartViewModel.CheckoutCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.CartViewModel.CheckoutCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.CartViewModel.CheckoutAsync"/>.</summary>
+        </member>
+        <member name="T:ShopApp.ViewModels.HomeViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="F:ShopApp.ViewModels.HomeViewModel.loadDataCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.HomeViewModel.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.HomeViewModel.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.HomeViewModel.LoadDataAsync"/>.</summary>
+        </member>
+        <member name="F:ShopApp.ViewModels.HomeViewModel.goToProductDetailsCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.HomeViewModel.GoToProductDetailsCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.HomeViewModel.GoToProductDetailsCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:ShopApp.ViewModels.HomeViewModel.GoToProductDetails(ShopApp.Models.Product)"/>.</summary>
+        </member>
+        <member name="T:ShopApp.ViewModels.OrdersViewModel">
+            <inheritdoc/>
+        </member>
+        <member name="F:ShopApp.ViewModels.OrdersViewModel.loadOrdersCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.OrdersViewModel.LoadOrdersCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.OrdersViewModel.LoadOrdersCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.OrdersViewModel.LoadOrdersAsync"/>.</summary>
+        </member>
+        <member name="T:ShopApp.ViewModels.ProductDetailsViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:ShopApp.ViewModels.ProductDetailsViewModel.Product">
+            <inheritdoc cref="F:ShopApp.ViewModels.ProductDetailsViewModel.product"/>
+        </member>
+        <member name="P:ShopApp.ViewModels.ProductDetailsViewModel.Quantity">
+            <inheritdoc cref="F:ShopApp.ViewModels.ProductDetailsViewModel.quantity"/>
+        </member>
+        <member name="F:ShopApp.ViewModels.ProductDetailsViewModel.increaseQuantityCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.ProductDetailsViewModel.IncreaseQuantityCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.ProductDetailsViewModel.IncreaseQuantityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.ProductDetailsViewModel.IncreaseQuantity"/>.</summary>
+        </member>
+        <member name="F:ShopApp.ViewModels.ProductDetailsViewModel.decreaseQuantityCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.ProductDetailsViewModel.DecreaseQuantityCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.ProductDetailsViewModel.DecreaseQuantityCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.ProductDetailsViewModel.DecreaseQuantity"/>.</summary>
+        </member>
+        <member name="F:ShopApp.ViewModels.ProductDetailsViewModel.addToCartCommand">
+            <summary>The backing field for <see cref="P:ShopApp.ViewModels.ProductDetailsViewModel.AddToCartCommand"/>.</summary>
+        </member>
+        <member name="P:ShopApp.ViewModels.ProductDetailsViewModel.AddToCartCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:ShopApp.ViewModels.ProductDetailsViewModel.AddToCartAsync"/>.</summary>
+        </member>
+        <member name="T:ShopApp.Resource">
+            <summary>
+            Android Resource Designer class.
+            Exposes the Android Resource designer assembly into the project Namespace.
+            </summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Quantity">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Quantity" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalPrice">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalPrice" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsNotBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsNotBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.TotalAmount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "TotalAmount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Product">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Product" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Quantity">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Quantity" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalPrice">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalPrice" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsNotBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsNotBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Title">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Title" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.TotalAmount">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "TotalAmount" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Product">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Product" generated properties.</summary>
+        </member>
+    </members>
+</doc>

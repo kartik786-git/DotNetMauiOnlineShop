@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ShopApp.ViewModels"
+             xmlns:models="clr-namespace:ShopApp.Models"
+             x:Class="ShopApp.Views.OrdersPage"
+             Title="{Binding Title}">
+
+    <Grid>
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="Blue" VerticalOptions="Center" HorizontalOptions="Center" ZIndex="1"/>
+        
+        <CollectionView ItemsSource="{Binding Orders}">
+            <CollectionView.EmptyView>
+                <Label Text="No orders found" HorizontalOptions="Center" VerticalOptions="Center" FontSize="20" TextColor="Gray"/>
+            </CollectionView.EmptyView>
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Order">
+                    <Frame Margin="10,5" Padding="0" CornerRadius="15" HasShadow="True" BorderColor="Transparent" BackgroundColor="White">
+                        <Grid RowDefinitions="Auto, Auto, Auto" Padding="15">
+                            
+                            <!-- Header: Date and Status Badge -->
+                            <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                                <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                    <Label Text="{Binding OrderDateDisplay}" FontSize="12" TextColor="{StaticResource Gray500}" />
+                                    <Label Text="{Binding Id, StringFormat='Order #{0}'}" FontSize="16" FontAttributes="Bold" TextColor="Black"/>
+                                </VerticalStackLayout>
+                                
+                                <!-- Status Badge with Triggers -->
+                                <Border Grid.Column="1" StrokeShape="RoundRectangle 15" StrokeThickness="0" Padding="12,5" HorizontalOptions="End" VerticalOptions="Start">
+                                    <Border.Style>
+                                        <Style TargetType="Border">
+                                            <Setter Property="BackgroundColor" Value="#FFF4E5" /> <!-- Default/Pending: Light Orange -->
+                                            <Style.Triggers>
+                                                <DataTrigger TargetType="Border" Binding="{Binding Status}" Value="Completed">
+                                                    <Setter Property="BackgroundColor" Value="#E6F4EA" /> <!-- Green -->
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Border" Binding="{Binding Status}" Value="Delivered">
+                                                    <Setter Property="BackgroundColor" Value="#E6F4EA" /> <!-- Green -->
+                                                </DataTrigger>
+                                                <DataTrigger TargetType="Border" Binding="{Binding Status}" Value="Cancelled">
+                                                    <Setter Property="BackgroundColor" Value="#FCE8E6" /> <!-- Red -->
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Border.Style>
+                                    <Label Text="{Binding Status}" FontSize="12" FontAttributes="Bold">
+                                        <Label.Style>
+                                            <Style TargetType="Label">
+                                                <Setter Property="TextColor" Value="#B06000" /> <!-- Default: Dark Orange -->
+                                                <Style.Triggers>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="Completed">
+                                                        <Setter Property="TextColor" Value="#107C10" /> <!-- Dark Green -->
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="Delivered">
+                                                        <Setter Property="TextColor" Value="#107C10" />
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Label" Binding="{Binding Status}" Value="Cancelled">
+                                                        <Setter Property="TextColor" Value="#C50F1F" /> <!-- Dark Red -->
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Label.Style>
+                                    </Label>
+                                </Border>
+                            </Grid>
+
+                            <!-- Body: Visual Tracker / Divider -->
+                            <BoxView Grid.Row="1" HeightRequest="1" Color="{StaticResource Gray100}" Margin="0,15"/>
+
+                            <!-- Footer: Totals and Action -->
+                            <Grid Grid.Row="2" ColumnDefinitions="Auto, *, Auto">
+                                <VerticalStackLayout Grid.Column="0" Spacing="2">
+                                    <Label Text="Total Amount" FontSize="10" TextColor="{StaticResource Gray500}" />
+                                    <Label Text="{Binding TotalAmountDisplay}" FontSize="16" FontAttributes="Bold" TextColor="{StaticResource Primary}" />
+                                </VerticalStackLayout>
+                                
+                                <VerticalStackLayout Grid.Column="2" Spacing="2" HorizontalOptions="End">
+                                     <Label Text="Items" FontSize="10" TextColor="{StaticResource Gray500}" HorizontalOptions="End"/>
+                                     <Label Text="{Binding ItemsCount}" FontSize="16" TextColor="Black" HorizontalOptions="End"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Grid>
+                    </Frame>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>

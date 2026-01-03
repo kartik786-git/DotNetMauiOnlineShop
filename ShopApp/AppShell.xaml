@@ -1,0 +1,14 @@
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:ShopApp"
+       xmlns:views="clr-namespace:ShopApp.Views"
+       x:Class="ShopApp.AppShell"
+       Title="ShopApp">
+
+    <TabBar>
+        <ShellContent Title="Home" ContentTemplate="{DataTemplate views:HomePage}" />
+        <ShellContent Title="Cart" ContentTemplate="{DataTemplate views:CartPage}" />
+        <ShellContent Title="Orders" ContentTemplate="{DataTemplate views:OrdersPage}" />
+    </TabBar>
+
+</Shell>

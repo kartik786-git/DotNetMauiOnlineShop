@@ -1,0 +1,10 @@
+<api type="debug" assembly-name="ShopApp" mvid="01d86fc76a374b13981c82c4c1a346b2">
+  <java-to-managed>
+    <entry java-name="crc64f80263f59bce6dce/MainActivity" managed-name="ShopApp.MainActivity, ShopApp" managed-type-token-id="33554444" />
+    <entry java-name="crc64f80263f59bce6dce/MainApplication" managed-name="ShopApp.MainApplication, ShopApp" managed-type-token-id="33554445" />
+  </java-to-managed>
+  <managed-to-java>
+    <entry java-name="crc64f80263f59bce6dce/MainActivity" managed-name="ShopApp.MainActivity, ShopApp" managed-type-token-id="33554444" />
+    <entry java-name="crc64f80263f59bce6dce/MainApplication" managed-name="ShopApp.MainApplication, ShopApp" managed-type-token-id="33554445" />
+  </managed-to-java>
+</api>

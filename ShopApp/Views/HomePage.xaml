@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ShopApp.ViewModels"
+             xmlns:models="clr-namespace:ShopApp.Models"
+             x:Class="ShopApp.Views.HomePage"
+             Title="{Binding Title}">
+    
+    <ContentPage.Resources>
+        <Shadow x:Key="SharedShadow" Brush="Black" Offset="5,5" Radius="10" Opacity="0.1"/>
+    </ContentPage.Resources>
+    
+    <Grid RowDefinitions="Auto, *">
+        <!-- Header / Search Area -->
+        <Grid Grid.Row="0" BackgroundColor="{StaticResource Primary}" Padding="20,10,20,30" RowDefinitions="Auto, Auto">
+            <Label Grid.Row="0" Text="Discover" FontSize="28" FontAttributes="Bold" TextColor="White"/>
+            <Border Grid.Row="1" Margin="0,15,0,0" StrokeShape="RoundRectangle 20" BackgroundColor="White" Padding="15,0" HeightRequest="45">
+                <Grid ColumnDefinitions="*, Auto">
+                    <Label Grid.Column="0" Text="Search products..." TextColor="{StaticResource Gray400}" VerticalOptions="Center"/>
+                    <Label Grid.Column="1" Text="&#x1F50D;" TextColor="{StaticResource Gray400}" VerticalOptions="Center" FontSize="18"/>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Main Content (Rounded Top Corners overlap) -->
+        <ScrollView Grid.Row="1" Margin="0,-20,0,0">
+            <Border StrokeShape="RoundRectangle 20,20,0,0" BackgroundColor="{AppThemeBinding Light={StaticResource White}, Dark={StaticResource OffBlack}}" StrokeThickness="0">
+                <VerticalStackLayout Padding="20" Spacing="25">
+                    
+                    <!-- Categories Section -->
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Categories" FontSize="18" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                        <CollectionView ItemsSource="{Binding Categories}" HeightRequest="50">
+                            <CollectionView.ItemsLayout>
+                                <LinearItemsLayout Orientation="Horizontal" ItemSpacing="15"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="models:Category">
+                                    <Border StrokeShape="RoundRectangle 15" BackgroundColor="{StaticResource Secondary}" StrokeThickness="0" Padding="20,8">
+                                        <Label Text="{Binding Name}" TextColor="{StaticResource Primary}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+
+                    <!-- Popular Products Section -->
+                    <VerticalStackLayout Spacing="10">
+                        <Label Text="Popular Products" FontSize="18" FontAttributes="Bold" TextColor="{AppThemeBinding Light=Black, Dark=White}"/>
+                        
+                        <CollectionView ItemsSource="{Binding Products}" SelectionMode="None">
+                            <CollectionView.ItemsLayout>
+                                <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="15" VerticalItemSpacing="15"/>
+                            </CollectionView.ItemsLayout>
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="models:Product">
+                                    <Border StrokeShape="RoundRectangle 15" StrokeThickness="0" BackgroundColor="#F9F9F9" HeightRequest="220" Shadow="{StaticResource SharedShadow}">
+                                        <Border.GestureRecognizers>
+                                            <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type vm:HomeViewModel}}, Path=GoToProductDetailsCommand}" CommandParameter="{Binding .}"/>
+                                        </Border.GestureRecognizers>
+                                        <Grid RowDefinitions="*, Auto" Padding="0">
+                                            <!-- Product Image Placeholder -->
+                                            <Border Grid.Row="0" Margin="10,10,10,0" StrokeShape="RoundRectangle 10" BackgroundColor="White" Padding="20" StrokeThickness="0">
+                                                <Image Source="{Binding ImageUrl}" Aspect="AspectFit" HorizontalOptions="Center" VerticalOptions="Center"/>
+                                            </Border>
+                                            
+                                            <!-- Info -->
+                                            <VerticalStackLayout Grid.Row="1" Padding="12">
+                                                <Label Text="{Binding Name}" LineBreakMode="TailTruncation" FontAttributes="Bold" FontSize="14" TextColor="Black"/>
+                                                <Label Text="{Binding CategoryName}" FontSize="11" TextColor="Gray" Margin="0,2,0,5"/>
+                                                <Grid ColumnDefinitions="*, Auto">
+                                                    <Label Grid.Column="0" Text="{Binding Price, StringFormat='{0:C}'}" TextColor="{StaticResource Primary}" FontAttributes="Bold" VerticalOptions="Center"/>
+                                                    <Border Grid.Column="1" StrokeShape="RoundRectangle 10" BackgroundColor="{StaticResource Primary}" Padding="8" StrokeThickness="0">
+                                                        <Label Text="+" TextColor="White" FontSize="12" FontAttributes="Bold"/>
+                                                    </Border>
+                                                </Grid>
+                                            </VerticalStackLayout>
+                                        </Grid>
+                                    </Border>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </VerticalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+        </ScrollView>
+        <ActivityIndicator Grid.RowSpan="2" IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" Color="{StaticResource Primary}" VerticalOptions="Center" HorizontalOptions="Center"/>
+    </Grid>
+</ContentPage>
