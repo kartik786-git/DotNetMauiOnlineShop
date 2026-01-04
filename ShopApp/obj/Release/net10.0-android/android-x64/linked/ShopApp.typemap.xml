@@ -1,0 +1,8 @@
+<api type="release" assembly-name="ShopApp" mvid="dee8ee57bd744621ad8cc8e708c4c93c">
+  <module assembly-name="ShopApp" mvid="dee8ee57bd744621ad8cc8e708c4c93c" mvid-bytes="V+7o3nS9IUatjMjnCMTJPA==">
+    <types-scratch>
+      <entry key="crc64f80263f59bce6dce/MainActivity" java-name="crc64f80263f59bce6dce/MainActivity" managed-type-name="ShopApp.MainActivity" token="33554445" />
+      <entry key="crc64f80263f59bce6dce/MainApplication" java-name="crc64f80263f59bce6dce/MainApplication" managed-type-name="ShopApp.MainApplication" token="33554446" />
+    </types-scratch>
+  </module>
+</api>

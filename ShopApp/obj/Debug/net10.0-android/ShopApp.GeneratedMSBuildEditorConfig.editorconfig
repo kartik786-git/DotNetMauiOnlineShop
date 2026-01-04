@@ -25,13 +25,13 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ShopApp
-build_property.ProjectDir = D:\Project\DotNetMauiOnlineShop\ShopApp\
+build_property.ProjectDir = D:\Project\DotNetMauiOnlineShop\shopapp\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.EffectiveAnalysisLevelStyle = 10.0
 build_property.EnableCodeStyleSeverity = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/App.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/App.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.App.xaml
 build_metadata.AdditionalFiles.TargetPath = App.xaml
@@ -41,7 +41,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/AppShell.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/AppShell.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.AppShell.xaml
 build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
@@ -51,7 +51,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/Resources/Styles/Colors.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.Resources.Styles.Colors.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
@@ -61,7 +61,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/Resources/Styles/Styles.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/Resources/Styles/Styles.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.Resources.Styles.Styles.xaml
 build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
@@ -71,7 +71,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/Views/CartPage.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/Views/CartPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.Views.CartPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\CartPage.xaml
@@ -81,7 +81,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/Views/HomePage.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/Views/HomePage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.Views.HomePage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\HomePage.xaml
@@ -91,7 +91,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/Views/OrdersPage.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/Views/OrdersPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.Views.OrdersPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\OrdersPage.xaml
@@ -101,7 +101,7 @@ build_metadata.AdditionalFiles.NoWarn =
 build_metadata.AdditionalFiles.EnableDiagnostics = 
 build_metadata.AdditionalFiles.LineInfo = 
 
-[D:/Project/DotNetMauiOnlineShop/ShopApp/Views/ProductDetailsPage.xaml]
+[D:/Project/DotNetMauiOnlineShop/shopapp/Views/ProductDetailsPage.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = ShopApp.Views.ProductDetailsPage.xaml
 build_metadata.AdditionalFiles.TargetPath = Views\ProductDetailsPage.xaml

@@ -129,3 +129,81 @@ If you are viewing this project on GitHub and want to run it locally, follow the
    - **iOS/Mac**: `dotnet run -f net10.0-maccatalyst` (Requires Mac)
 
 > **Note**: Ensure you have the [.NET Multi-platform App UI development](https://dotnet.microsoft.com/en-us/apps/maui) workload installed in Visual Studio.
+
+---
+
+## 📦 Building Distribution Packages
+
+### Building Android APK
+
+To create an installable APK file for Android:
+
+```powershell
+dotnet publish -f net10.0-android -c Release -p:AndroidPackageFormat=apk
+```
+
+**Output Location:**
+`bin\Release\net10.0-android\publish\com.companyname.shopapp-Signed.apk`
+
+You can transfer this APK file to any Android device and install it.
+
+---
+
+### Building Windows Desktop Installer
+
+#### Option 1: Professional Installer (Recommended)
+
+This creates a traditional `.exe` installer using Inno Setup:
+
+1. **Install Inno Setup** (one-time):
+   ```powershell
+   winget install JRSoftware.InnoSetup
+   ```
+
+2. **Build the Application**:
+   ```powershell
+   dotnet publish -f net10.0-windows10.0.19041.0 -c Release
+   ```
+
+3. **Compile the Installer**:
+   ```powershell
+   & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" "ShopApp-Setup.iss"
+   ```
+
+**Output Location:**
+`Installer\ShopApp-Setup.exe`
+
+This installer:
+- Works like professional software installers
+- No certificates needed
+- Creates Start Menu shortcuts
+- Includes proper Uninstaller
+- Just double-click to install!
+
+#### Option 2: Portable Version
+
+For a simple folder-based deployment without installation:
+
+```powershell
+dotnet publish -f net10.0-windows10.0.19041.0 -c Release
+```
+
+**Output Location:**
+`bin\Release\net10.0-windows10.0.19041.0\win-x64\publish\`
+
+Run `ShopApp.exe` directly from this folder, or use the included `Run-ShopApp.bat` script.
+
+---
+
+## 🔧 Troubleshooting
+
+### Android Build Issues
+- Ensure Android SDK is properly installed
+- Check that `ANDROID_HOME` environment variable is set
+- For signing errors, the APK is automatically signed with a debug certificate
+
+### Windows Build Issues
+- Ensure Windows SDK 10.0.19041.0 or higher is installed
+- For MSIX certificate errors, use the Inno Setup installer method instead
+- Run Visual Studio Installer to verify .NET MAUI workload is installed
+
